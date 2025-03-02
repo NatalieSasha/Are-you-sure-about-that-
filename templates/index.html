@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Checker & Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <script src="{{ url_for('static', filename='script.js') }}" defer></script>
+</head>
+<body>
+    <div class="container">
+
+        <!-- Box 1: Password Strength Checker -->
+        <section class="box" id="check-password-section">
+            <h2>Check Your Password Strength</h2>
+            
+            <div class="password-box">
+                <input type="password" name="password" id="password" placeholder="Enter password">
+                <img src="{{ url_for('static', filename='eye-open.svg') }}" id="togglePassword" class="togglePassword">
+            </div>
+
+            <!-- Strength Meter -->
+            <div class="strength-meter">
+                <div id="strength-bar"></div>
+            </div>
+
+            <!-- Suggestions Box -->
+            <div id="suggestion-box" class="hidden">
+                <p id="suggestions"></p>
+            </div>
+
+            <button id="copyCheckedPassword">Copy</button>
+        </section>
+
+        <!-- Box 2: Personalized Password Generator -->
+        <section class="box" id="generate-password-section">
+            <h2>Generate a Secure Password</h2>
+
+            <input type="text" id="character" class="small-input" placeholder="Favorite Movie Character">
+            <input type="text" id="city" class="small-input" placeholder="Favorite City">
+
+            <div class="password-box">
+                <input type="text" id="generatedPassword" readonly>
+                <img src="{{ url_for('static', filename='eye-open.svg') }}" id="toggleGeneratedPassword" class="togglePassword">
+            </div>
+
+            <button id="generatePassword">Generate Password</button>
+            <button id="copyPassword">Copy</button>
+        </section>
+
+    </div>
+</body>
+</html>
